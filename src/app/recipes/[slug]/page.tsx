@@ -15,11 +15,11 @@ export default async function RecipePage({
 }: {
   params: { slug: string }
 }) {
-  const { slug } = params
-  const recipe = await getRecipeBySlug(slug)
+  const { slug } = await Promise.resolve(params);
+  const recipe = getRecipeBySlug(slug);
 
   if (!recipe) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -61,5 +61,5 @@ export default async function RecipePage({
         </div>
       </div>
     </article>
-  )
+  );
 } 

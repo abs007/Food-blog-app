@@ -17,7 +17,7 @@ export interface Recipe {
 
 const recipesDirectory = path.join(process.cwd(), 'content/recipes')
 
-export async function getAllRecipes(): Promise<Recipe[]> {
+export function getAllRecipes(): Recipe[] {
   // Create the directory if it doesn't exist
   if (!fs.existsSync(recipesDirectory)) {
     fs.mkdirSync(recipesDirectory, { recursive: true })
@@ -42,7 +42,7 @@ export async function getAllRecipes(): Promise<Recipe[]> {
   return allRecipesData.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
-export async function getRecipeBySlug(slug: string): Promise<Recipe | null> {
+export function getRecipeBySlug(slug: string): Recipe | null {
   try {
     const fullPath = path.join(recipesDirectory, `${slug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
