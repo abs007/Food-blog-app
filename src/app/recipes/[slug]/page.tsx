@@ -15,7 +15,7 @@ export default async function RecipePage({
 }: {
   params: { slug: string }
 }) {
-  const { slug } = await Promise.resolve(params);
+  const { slug } = params;
   const recipe = getRecipeBySlug(slug);
 
   if (!recipe) {
