@@ -1,0 +1,44 @@
+{
+  "name": "culinary-chronicles",
+  "version": "1.0.0",
+  "description": "A modern recipe blog built with Next.js and hosted on GitHub Pages",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build && next export"
+  },
+  "keywords": [
+    "recipes",
+    "food",
+    "blog",
+    "nextjs",
+    "markdown"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^14.2.23",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "gray-matter": "^4.0.3",
+    "next": "latest",
+    "next-mdx-remote": "^5.0.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "remark-gfm": "^4.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
+}
