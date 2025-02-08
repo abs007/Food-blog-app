@@ -10,17 +10,14 @@ export async function generateStaticParams() {
   }))
 }
 
-type Props = {
-  params: { slug: string }
-  searchParams?: { [key: string]: string | string[] | undefined }
-}
-
-export default function RecipePage({ params, searchParams }: Props) {
-  const { slug } = params;
-  const recipe = getRecipeBySlug(slug);
+export default async function RecipePage({ params }: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params // Critical await
+  const recipe = getRecipeBySlug(slug)
 
   if (!recipe) {
-    notFound();
+    notFound()
   }
 
   return (
