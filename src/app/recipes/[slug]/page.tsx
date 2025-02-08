@@ -2,7 +2,6 @@ import { getRecipeBySlug, getAllRecipes } from '@/lib/recipes'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { Metadata } from 'next'
 
 export async function generateStaticParams() {
   const recipes = await getAllRecipes()
@@ -13,10 +12,10 @@ export async function generateStaticParams() {
 
 type Props = {
   params: { slug: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-export default async function RecipePage({ params, searchParams }: Props) {
+export default function RecipePage({ params, searchParams }: Props) {
   const { slug } = params;
   const recipe = getRecipeBySlug(slug);
 
