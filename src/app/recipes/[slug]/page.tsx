@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 export default async function RecipePage({ params }: {
   params: Promise<{ slug: string }>
 }) {
-  const { slug } = await params // Critical await
+  const { slug } = await params
   const recipe = getRecipeBySlug(slug)
 
   if (!recipe) {
