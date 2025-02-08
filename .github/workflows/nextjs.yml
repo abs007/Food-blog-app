@@ -27,6 +27,9 @@ jobs:
           node-version: 20
           cache: 'pnpm' # Change to 'npm' if using npm
 
+      - name: Install pnpm
+        run: npm install -g pnpm@8
+
       - name: Install dependencies
         run: pnpm install # or 'npm install'
 
