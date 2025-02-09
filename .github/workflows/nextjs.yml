@@ -21,20 +21,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        run: npm install -g pnpm@8
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm' # Change to 'npm' if using npm
+          cache: 'npm' # Change to 'npm' if using npm
 
       - name: Install dependencies
-        run: pnpm install # or 'npm install'
+        run: npm ci
 
       - name: Build project
-        run: pnpm run export # or 'npm run export'
+        run: npm run export # or 'npm run export'
         env:
           NEXT_PUBLIC_BASE_PATH: '/Food-blog-app' # Match your repository name
 
