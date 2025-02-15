@@ -35,7 +35,7 @@ export default async function RecipePage({ params }: {
 
         <div className="relative h-96 mb-8">
           <Image
-            src={recipe.image || '/images/default.jpg'}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/${recipe.image}`}
             alt={recipe.title}
             fill
             className="object-cover rounded-lg"
